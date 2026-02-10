@@ -1,5 +1,4 @@
 Write-Host "Select program to run"
-$NotificationIcon = "C:\Users/Henri/Desktop/hello.png"
 $TARGET_DIR = $args[0]
 if (-not $TARGET_DIR) {
     $TARGET_DIR = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs"
@@ -14,7 +13,7 @@ if (-not (Test-Path $TEMPNAME) -or -not (Test-Path $TEMPPATH)) {
     $programheader = New-BTHeader Synopsis "wlines-run: rescan starting"
     $title = "Creating temp files for indexed files"
     $message = "Searching for files with extensions: '.lnk', '.exe', '.bat', '.ps1' and ignored '.ini'\n$"
-    New-BurntToastNotification -AppLogo $NotificationIcon -Text "$title", "$message" -Header $programheader
+    New-BurntToastNotification -AppLogo C:\Users/Henri/Desktop/hello.png -Text "$title", "$message" -Header $programheader
 
     $startMenuDirs = @(
         "$env:APPDATA\Microsoft\Windows\Start Menu\Programs",    # User
@@ -69,7 +68,7 @@ if (-not (Test-Path $TEMPNAME) -or -not (Test-Path $TEMPPATH)) {
     $programheader = New-BTHeader Synopsis "wlines-run: rescan complete"
     $title = "Reindexed filepaths"
     $message = "Loaded all marked executable files: '.lnk', '.exe', '.bat', '.ps1' and ignored '.ini'"
-    New-BurntToastNotification -AppLogo $NotificationIcon -Text "$title", "$message" -Header $programheader
+    New-BurntToastNotification -AppLogo C:\Users/Henri/Desktop/hello.png -Text "$title", "$message" -Header $programheader
 }
 
 
@@ -79,7 +78,7 @@ Write-Output $TEMPNAME
 $FILE = "$TEMPNAME"
 $FILECONTENT = Get-Content -Path $FILE -Raw
 
-$SELECTION = & '$env:HOME\Bin\wlines-rofi.ps1' -InputContent $FILECONTENT "Run"
+$SELECTION = & 'C:\User Terminal Bin\wlines-rofi.ps1' -InputContent $FILECONTENT "Run"
 Write-Output "wlines selection: $SELECTION"
 if ( $SELECTION -eq "Refresh Cache")
 {
@@ -112,7 +111,7 @@ if ($MATCHEDPATH) {
     $programheader = New-BTHeader Synopsis "wlines-run: Error"
     $title = "An Error Occured"
     $message = "Could not launch the program: $SELECTION"
-    New-BurntToastNotification -AppLogo $NotificationIcon -Text "$title", "$message" -Header $programheader
+    New-BurntToastNotification -AppLogo C:\Users/Henri/Desktop/hello.png -Text "$title", "$message" -Header $programheader
 }
 
 
