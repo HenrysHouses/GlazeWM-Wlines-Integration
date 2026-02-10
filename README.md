@@ -19,7 +19,7 @@ You could likely easily achieve this without glazewm but I was already using it 
 # Getting started
 I keep all my custom scritps in `C:/Users/MyUser/Bin` which is in the `$PATH` environment variable, if it isnt add whichever folder you decide to use.
 
-Make sure you have both glazewm and wlines installed, and move the wlines binary into a folder in the $PATH variable. I place it in the user/bin for convenience.
+Make sure you have both glazewm and wlines installed, and move the wlines binary into a folder in the `$PATH` variable. I place it in the user/bin for convenience. This folder doesnt exist by default so you have to make it and add it to `$PATH` manually.
 You can launch the daemons however you like, I opted to do so through glazewm's startup commands listening to glaze events isnt required when its not running. you can also add these scritps to the shutdown command to make sure they dont linger if glazewm shuts down.
 
 ```yaml
