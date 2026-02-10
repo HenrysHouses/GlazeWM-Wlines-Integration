@@ -78,7 +78,7 @@ Write-Output $TEMPNAME
 $FILE = "$TEMPNAME"
 $FILECONTENT = Get-Content -Path $FILE -Raw
 
-$SELECTION = & 'C:\User Terminal Bin\wlines-rofi.ps1' -InputContent $FILECONTENT "Run"
+$SELECTION = & wlines-rofi -InputContent $FILECONTENT "Run"
 Write-Output "wlines selection: $SELECTION"
 if ( $SELECTION -eq "Refresh Cache")
 {
@@ -113,5 +113,6 @@ if ($MATCHEDPATH) {
     $message = "Could not launch the program: $SELECTION"
     New-BurntToastNotification -AppLogo C:\Users/Henri/Desktop/hello.png -Text "$title", "$message" -Header $programheader
 }
+
 
 
