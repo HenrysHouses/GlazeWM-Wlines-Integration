@@ -1,7 +1,7 @@
 # GlazeWM-Wlines-Integration
 Some scripts to connect Wlines together with Glazewm using their buillt in shortcuts and event system to send messages to a daemon launching the menu. Increasing the responsiveness of the wlines menu compared to launching a new instance of a terminal to run the script each time. 
 
-Disclaimer: these are personal tools i made for myself so i am not intending to keep this repo clean or make an installation script, if it works on my end, it works.
+**Disclaimer:** these are personal tools i made for myself so i am not intending to keep this repo clean or make an installation script, if it works on my end, it works.
 I also wrote these scripts out of frustration because there was no good solution online for a dmenu / rofi implementation on windows that was truly a port and not another powertoys command palette / power run copy as these never worked well for my workflow.
 either having too many features all at once without seperation, slow or inresponsive, or not easily scriptable with shell scripts.
 
