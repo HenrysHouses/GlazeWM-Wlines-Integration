@@ -7,6 +7,9 @@ either having too many features all at once without seperation, slow or inrespon
 
 You could likely easily achieve this without glazewm but I was already using it and thought why not tie these scripts into the same environment I am intending to use it in anyway.
 
+![showcase](./Wlines_result.gif)
+![showcase2](./2026-02-10 02-20-13.mkv)
+
 # Dependencies
 - [GlazeWM](https://github.com/glzr-io/glazewm?tab=GPL-3.0-1-ov-file#readme)
 - [Wlines](https://github.com/JerwuQu/wlines)
