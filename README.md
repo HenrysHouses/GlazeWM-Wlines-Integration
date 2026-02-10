@@ -14,6 +14,7 @@ You could likely easily achieve this without glazewm but I was already using it 
 - [Wlines](https://github.com/JerwuQu/wlines)
 - PowerShell
 - [jq](https://jqlang.org/)
+- [BurntToast](https://github.com/Windos/BurntToast)
 
 # Getting started
 I keep all my custom scritps in `C:/Users/MyUser/Bin` which is in the $PATH environment variable, if it isnt add whichever folder you decide to use.
