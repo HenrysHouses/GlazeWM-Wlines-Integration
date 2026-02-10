@@ -1,4 +1,5 @@
 Write-Host "Select program to run"
+$AppIcon = "C:/Users/Henri/Desktop/hello.png"
 $TARGET_DIR = $args[0]
 if (-not $TARGET_DIR) {
     $TARGET_DIR = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs"
@@ -13,7 +14,7 @@ if (-not (Test-Path $TEMPNAME) -or -not (Test-Path $TEMPPATH)) {
     $programheader = New-BTHeader Synopsis "wlines-run: rescan starting"
     $title = "Creating temp files for indexed files"
     $message = "Searching for files with extensions: '.lnk', '.exe', '.bat', '.ps1' and ignored '.ini'\n$"
-    New-BurntToastNotification -AppLogo C:\Users/Henri/Desktop/hello.png -Text "$title", "$message" -Header $programheader
+    New-BurntToastNotification -AppLogo $AppIcon -Text "$title", "$message" -Header $programheader
 
     $startMenuDirs = @(
         "$env:APPDATA\Microsoft\Windows\Start Menu\Programs",    # User
@@ -65,10 +66,11 @@ if (-not (Test-Path $TEMPNAME) -or -not (Test-Path $TEMPPATH)) {
         }
     }
 
+    Add-Content -Path $TEMPNAME -Value "Debug Wline Notification"
     $programheader = New-BTHeader Synopsis "wlines-run: rescan complete"
     $title = "Reindexed filepaths"
     $message = "Loaded all marked executable files: '.lnk', '.exe', '.bat', '.ps1' and ignored '.ini'"
-    New-BurntToastNotification -AppLogo C:\Users/Henri/Desktop/hello.png -Text "$title", "$message" -Header $programheader
+    New-BurntToastNotification -AppLogo $AppIcon -Text "$title", "$message" -Header $programheader
 }
 
 
@@ -86,6 +88,16 @@ if ( $SELECTION -eq "Refresh Cache")
     Remove-Item -Path "$TEMPNAME"
     Remove-Item -Path "$TEMPPATH"
     # & 'C:\Users\Henri\bin\wlines-run.ps1'
+    return
+}
+
+if ( $SELECTION -eq "Debug Wline Notification")
+{
+    Write-Host "Notifying"
+    $programheader = New-BTHeader Synopsis "wlines-run: Debug"
+    $title = "Manual Debug"
+    $message = "Everything OK with? $SELECTION"
+    New-BurntToastNotification -AppLogo $AppIcon -Text "$title", "$message" -Header $programheader
     return
 }
 
@@ -111,8 +123,5 @@ if ($MATCHEDPATH) {
     $programheader = New-BTHeader Synopsis "wlines-run: Error"
     $title = "An Error Occured"
     $message = "Could not launch the program: $SELECTION"
-    New-BurntToastNotification -AppLogo C:\Users/Henri/Desktop/hello.png -Text "$title", "$message" -Header $programheader
+    New-BurntToastNotification -AppLogo $AppIcon -Text "$title", "$message" -Header $programheader
 }
-
-
-
