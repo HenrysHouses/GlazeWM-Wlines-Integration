@@ -1,5 +1,5 @@
 Write-Host "Select program to run"
-$NotificationIcon = C:\Users/Henri/Desktop/hello.png
+$NotificationIcon = "C:\Users/Henri/Desktop/hello.png"
 $TARGET_DIR = $args[0]
 if (-not $TARGET_DIR) {
     $TARGET_DIR = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs"
@@ -114,4 +114,5 @@ if ($MATCHEDPATH) {
     $message = "Could not launch the program: $SELECTION"
     New-BurntToastNotification -AppLogo $NotificationIcon -Text "$title", "$message" -Header $programheader
 }
+
 
